@@ -1,6 +1,7 @@
 import Foundation
 
 enum ThreeDucksAction {
+    case launch
     case startGame
     case endGame
     case flipCard(Card)
@@ -9,4 +10,5 @@ enum ThreeDucksAction {
     case winGame
     case setFlipLocked(Bool)
     case setDifficulty(DifficultyLevel)
+    case setPreviousBestScore(Score?)
 }

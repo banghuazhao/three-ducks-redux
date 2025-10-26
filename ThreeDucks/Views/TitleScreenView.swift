@@ -18,6 +18,17 @@ struct TitleScreenView: View {
             .padding()
             .background(Color.purple)
             .cornerRadius(40)
+          
+          if let score = store.state.previousBestScore {
+            VStack(alignment: .center) {
+              Text("Best Score")
+                .font(.headline)
+
+              Text("\(score.moves) moves, difficulty: \(score.difficulty.rawValue)")
+                .font(.subheadline)
+            }
+            .foregroundColor(.purple)
+          }
 
             Spacer()
 

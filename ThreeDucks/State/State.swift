@@ -8,4 +8,6 @@ struct ThreeDucksState {
     var moves: Int = 0
 
     var isFlipLocked = false
+
+    var previousBestScore: Score?
 }

@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-let gameLogic: Middleware<ThreeDucksState, ThreeDucksAction> = { state, action in
+let gameLogicMiddleware: Middleware<ThreeDucksState, ThreeDucksAction> = { state, action in
     switch action {
     case .flipCard:
         if state.cards.allSatisfy({ $0.isFlipped }) {

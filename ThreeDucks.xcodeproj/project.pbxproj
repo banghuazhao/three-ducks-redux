@@ -126,8 +126,8 @@
 			children = (
 				18D775C422AD944300AE281E /* ContentView.swift */,
 				499C708C260C202F00BE1486 /* TitleScreenView.swift */,
-				4978903E2613374D00A5E9B8 /* GameWinScreenView.swift */,
 				49FFE1BE2608A622009F2416 /* GameScreenView.swift */,
+				4978903E2613374D00A5E9B8 /* GameWinScreenView.swift */,
 				49D3F03326183D45004D49D3 /* CardGridView.swift */,
 				49FFE1B526089E8E009F2416 /* CardView.swift */,
 				49FFE1B82608A057009F2416 /* CardBackContentView.swift */,

@@ -4,11 +4,15 @@ let threeDucksReducer: Reducer<ThreeDucksState, ThreeDucksAction>
     = { state, action in
         var mutableState = state
         switch action {
+        case .launch:
+            mutableState.gameState = .title
         case .startGame:
             mutableState.gameState = .started
             mutableState.cards = cards(for: mutableState.gameDifficulty)
             mutableState.selectedCards = []
             mutableState.moves = 0
+        case .winGame:
+            mutableState.gameState = .won
         case .endGame:
             mutableState.gameState = .title
         case let .flipCard(card):
@@ -35,12 +39,12 @@ let threeDucksReducer: Reducer<ThreeDucksState, ThreeDucksAction>
             }
             mutableState.selectedCards = []
             mutableState.cards = cards
-        case .winGame:
-            mutableState.gameState = .won
         case let .setFlipLocked(isLocked):
             mutableState.isFlipLocked = isLocked
         case let .setDifficulty(difficulty):
             mutableState.gameDifficulty = difficulty
+        case let .setPreviousBestScore(score):
+            mutableState.previousBestScore = score
         }
         return mutableState
     }
