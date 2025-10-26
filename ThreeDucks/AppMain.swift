@@ -7,7 +7,8 @@ struct AppMain: App {
         reducer: threeDucksReducer,
         middlewares: [
             gameLogicMiddleware,
-            bestScoreMiddleware(using: ScorePersistence())
+            bestScoreMiddleware(using: ScorePersistence()),
+            quackSoundMiddleware(using: QuackPlayer())
         ]
     )
 

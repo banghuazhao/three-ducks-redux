@@ -57,6 +57,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		99028FC12EACC98800C2D0C6 /* State */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = State; sourceTree = "<group>"; };
 		99028FC22EACC98E00C2D0C6 /* Store */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Store; sourceTree = "<group>"; };
+		99028FDD2EADC70F00C2D0C6 /* Middleware */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Middleware; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 				1839F4AF25190F2A00BB00F1 /* AppMain.swift */,
 				99028FC22EACC98E00C2D0C6 /* Store */,
 				99028FC12EACC98800C2D0C6 /* State */,
+				99028FDD2EADC70F00C2D0C6 /* Middleware */,
 				49FFE1C22608A713009F2416 /* Model */,
 				49FFE1C12608A70C009F2416 /* Views */,
 				49107CCD26171FB400E85A59 /* Assets */,
@@ -169,6 +171,7 @@
 			fileSystemSynchronizedGroups = (
 				99028FC12EACC98800C2D0C6 /* State */,
 				99028FC22EACC98E00C2D0C6 /* Store */,
+				99028FDD2EADC70F00C2D0C6 /* Middleware */,
 			);
 			name = ThreeDucks;
 			productName = MyRWTutorial;

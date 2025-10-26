@@ -1,19 +1,23 @@
-import Foundation
 import AVFoundation
+import Foundation
 
-struct QuackPlayer {
-  var quack: AVAudioPlayer?
+protocol QuackPlayerProtocol {
+    func play()
+}
 
-  init() {
-    guard let soundURL = Bundle.main.url(forResource: "duck", withExtension: "mp3") else {
-      return
+struct QuackPlayer: QuackPlayerProtocol {
+    var quack: AVAudioPlayer?
+
+    init() {
+        guard let soundURL = Bundle.main.url(forResource: "duck", withExtension: "mp3") else {
+            return
+        }
+
+        quack = try? AVAudioPlayer(contentsOf: soundURL)
+        quack?.prepareToPlay()
     }
 
-    quack = try? AVAudioPlayer(contentsOf: soundURL)
-    quack?.prepareToPlay()
-  }
-
-  func play() {
-    quack?.play()
-  }
+    func play() {
+        quack?.play()
+    }
 }
