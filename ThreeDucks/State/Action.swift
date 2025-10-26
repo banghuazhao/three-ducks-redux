@@ -8,4 +8,5 @@ enum ThreeDucksAction {
     case unFlipSelectedCards
     case winGame
     case setFlipLocked(Bool)
+    case setDifficulty(DifficultyLevel)
 }

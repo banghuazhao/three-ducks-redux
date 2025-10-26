@@ -1,5 +1,6 @@
 struct ThreeDucksState {
     var gameState: GameState = .title
+    var gameDifficulty: DifficultyLevel = .easy
 
     var cards = [Card]()
 

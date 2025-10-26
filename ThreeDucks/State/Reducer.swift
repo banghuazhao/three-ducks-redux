@@ -6,20 +6,7 @@ let threeDucksReducer: Reducer<ThreeDucksState, ThreeDucksAction>
         switch action {
         case .startGame:
             mutableState.gameState = .started
-            mutableState.cards = [
-                Card(animal: .bat),
-                Card(animal: .bat),
-                Card(animal: .ducks),
-                Card(animal: .ducks),
-                Card(animal: .bear),
-                Card(animal: .bear),
-                Card(animal: .pelican),
-                Card(animal: .pelican),
-                Card(animal: .horse),
-                Card(animal: .horse),
-                Card(animal: .elephant),
-                Card(animal: .elephant),
-            ].shuffled()
+            mutableState.cards = cards(for: mutableState.gameDifficulty)
             mutableState.selectedCards = []
             mutableState.moves = 0
         case .endGame:
@@ -52,6 +39,47 @@ let threeDucksReducer: Reducer<ThreeDucksState, ThreeDucksAction>
             mutableState.gameState = .won
         case let .setFlipLocked(isLocked):
             mutableState.isFlipLocked = isLocked
+        case let .setDifficulty(difficulty):
+            mutableState.gameDifficulty = difficulty
         }
         return mutableState
     }
+
+private func cards(for difficult: DifficultyLevel) -> [Card] {
+    var base: [Card] = [
+        Card(animal: .bat),
+        Card(animal: .bat),
+        Card(animal: .ducks),
+        Card(animal: .ducks),
+        Card(animal: .bear),
+        Card(animal: .bear),
+        Card(animal: .pelican),
+        Card(animal: .pelican),
+        Card(animal: .horse),
+        Card(animal: .horse),
+        Card(animal: .elephant),
+        Card(animal: .elephant),
+    ]
+    switch difficult {
+    case .easy: break
+    case .normal:
+        base.append(contentsOf: [
+            Card(animal: .monkey),
+            Card(animal: .monkey),
+            Card(animal: .owl),
+            Card(animal: .owl),
+        ])
+    case .hard:
+        base.append(contentsOf: [
+            Card(animal: .monkey),
+            Card(animal: .monkey),
+            Card(animal: .owl),
+            Card(animal: .owl),
+            Card(animal: .rabbit),
+            Card(animal: .rabbit),
+            Card(animal: .turtle),
+            Card(animal: .turtle),
+        ])
+    }
+    return base.shuffled()
+}

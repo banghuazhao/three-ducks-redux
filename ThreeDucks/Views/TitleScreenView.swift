@@ -24,9 +24,13 @@ struct TitleScreenView: View {
             HStack(alignment: .center, spacing: 16) {
                 ForEach(DifficultyLevel.allCases) { level in
                     Button {
-                        // action
+                        store.dispatch(.setDifficulty(level))
                     } label: {
-                        Label(level.rawValue, systemImage: "rectangle.portrait")
+                        Label(
+                            level.rawValue,
+                            systemImage: store.state.gameDifficulty == level ? "checkmark.rectangle.portrait.fill" :
+                                "rectangle.portrait"
+                        )
                     }
                     .foregroundColor(level.color)
                     .padding()
